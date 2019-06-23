@@ -1,0 +1,21 @@
+{
+  "name": "betting-app",
+  "version": "1.0.0",
+  "description": "This is a collection of all the REST and LIVE APIs for betting-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.0",
+    "morgan": "^1.9.1",
+    "pino": "^5.12.6",
+    "request": "^2.88.0",
+    "superagent": "^5.1.0"
+  }
+}
