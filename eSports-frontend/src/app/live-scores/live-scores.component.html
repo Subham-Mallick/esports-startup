@@ -1,0 +1,21 @@
+<div *ngIf = "latestScores">
+  <div>
+    <b>Kills : </b>{{latestScores.kills}}
+  </div>
+  <br><br>
+  <div>
+    <b>Assists : </b>{{latestScores.assists}}
+  </div>
+  <br><br>
+  <div>
+    <b>Deaths : </b>{{latestScores.deaths}}
+  </div>
+  <br><br>
+  <div>
+  <button (click) = "counter=counter + 1; updateScores(counter)">Update</button>
+  </div>
+  <br><br>
+  <div *ngIf="message">
+    {{message}}
+  </div>
+</div>
