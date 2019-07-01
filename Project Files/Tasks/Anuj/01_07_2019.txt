@@ -1,5 +1,6 @@
 Task:
-Enhance the GUI.
+1) Enhance the GUI.
+2) Create a branch for yourself
 
 Date Completed:
 
