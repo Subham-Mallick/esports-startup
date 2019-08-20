@@ -3,6 +3,7 @@ export type Scores = {
     kills: Number;
     assists: Number;
     deaths: Number;
+<<<<<<< HEAD
 }
 
 export type Player = {
@@ -40,4 +41,6 @@ export type Match = {
     game_number: Number;
     round: Number;
     current_timestamp: Number;
+=======
+>>>>>>> 0d1fa5367adbce45aee45e62043b972f6fb3d26c
 }
