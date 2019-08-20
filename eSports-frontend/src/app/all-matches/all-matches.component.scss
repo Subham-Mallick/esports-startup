@@ -1,0 +1,30 @@
+.score-cards{
+    height: max-content;
+    width: max-content;
+    min-height: 200px;
+    min-width: 200px;
+    background-color: gainsboro;
+}
+
+.score{
+    border: 1px solid grey;
+    border-radius: 50%;
+    min-height: 160px;
+    text-align: center;
+    line-height: 10;
+    font-weight: 900;
+    background-color: gold;
+}
+
+.team-a{
+    color: rgb(142, 94, 170);
+}
+
+.team-b{
+    color: rgb(111, 188, 194);
+}
+
+.player-name{
+    text-transform: uppercase;
+    color: goldenrod;
+}

@@ -5,12 +5,14 @@ const appConfig = require('./../Config/appConfig')
 
 let setRouter = (app) =>{
    
-    let baseUrl = appConfig.apiVersion + '/scores'
+	let baseUrl = appConfig.apiVersion;
+	
+	app.get(baseUrl +'/all-matches/', scoresController.getAllMatches)
 
-    app.get(baseUrl +'/', scoresController.getAllScores)  // later have to fetch using matchID
+    app.get(baseUrl +'/scores/', scoresController.getAllScores)  // later have to fetch using matchID
 
     /**
-     * @api {get} /api/v1/scores/all Get all scores
+     * @api {get} /api/v1/scores Get all scores
      * @apiVersion 0.0.1
      * @apiGroup read   
      * 
@@ -43,9 +45,9 @@ let setRouter = (app) =>{
 	   }
 	 */
 
-	app.get(baseUrl +'/countries', scoresController.getLatestScores)
+	app.get(baseUrl +'/scores/countries', scoresController.getLatestScores)
 
-    app.put(baseUrl +'/:scoreID/update', scoresController.updateScores) //instead update using matchID
+    app.put(baseUrl +'/scores/:scoreID/update', scoresController.updateScores) //instead update using matchID
 
     /**
      * @api {put} /api/v1/scores/:scoreID/update update scores

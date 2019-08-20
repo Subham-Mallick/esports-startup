@@ -9,6 +9,7 @@ var Request = require('request');
 
 //importing the model here
 const ScoresModel = mongoose.model('Scores')
+const MatchesModel = mongoose.model('Matches')
 
 /**
  * function to get scores
@@ -30,6 +31,31 @@ let getAllScores = (req, res) => {
         } else {
             logger.info('All Scores Found Successfully', 'Score Controller: getAllScores', 5)
             let apiResponse = response.generate(false, 'All Score details Found', 200, result)
+            res.send(apiResponse)
+        }
+    }) 
+}
+
+/**
+ * function to get matches and their details
+ */
+let getAllMatches = (req, res) => {
+    MatchesModel.find()
+    .select('-_v, -_id')
+    .lean()
+    .exec((err, result) =>{
+        if (err) {
+            console.log(err)
+            logger.error(err.message, 'Score Controller : getAllMatches', 10)
+            let apiResponse = response.generate(true, 'Failed to find Match details', 500, null)
+            res.send(apiResponse)
+        } else if (check.isEmpty(result)) { // handling 404 case
+            logger.info('No Match Found', 'Score Controller: getAllMatches',7)
+            let apiResponse = response.generate(true, 'No Match Found', 404, null)
+            res.send(apiResponse)
+        } else {
+            logger.info('All Match Found Successfully', 'Score Controller: getAllMatches', 5)
+            let apiResponse = response.generate(false, 'All Match details Found', 200, result)
             res.send(apiResponse)
         }
     }) 
@@ -99,6 +125,7 @@ let updateScores = (req, res) => {
 
 module.exports = {
     getAllScores : getAllScores,
+    getAllMatches: getAllMatches,
     getLatestScores: getLatestScores,
     updateScores : updateScores
 }

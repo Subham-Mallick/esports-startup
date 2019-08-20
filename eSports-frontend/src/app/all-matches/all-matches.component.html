@@ -1,0 +1,112 @@
+<div class="ui-g">
+  <div class="ui-lg-12 ui-md-12 ui-g-12">
+    <!-- Table for match details -->
+    <div class="ui-lg-6 ui-md-6 ui-g-6">
+      <!-- Table for Terrorists -->
+      <div class="ui-lg-6 ui-md-6 ui-g-6">
+        <mat-nav-list *ngIf="currentMatch">
+          <mat-list-item>
+            <mat-grid-list mat-line cols="4" rowHeight="39px">
+              <mat-grid-tile colspan="4" class="team-a">{{currentMatch.terrorists.name}} (Terrorists)</mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+
+        <mat-nav-list>
+          <mat-list-item>
+            <mat-grid-list mat-line cols="4" rowHeight="39px">
+              <mat-grid-tile colspan="1" class="team-a">Name</mat-grid-tile>
+              <mat-grid-tile colspan="1" class="team-a">Alive?</mat-grid-tile>
+              <mat-grid-tile colspan="1" class="team-a">Kills</mat-grid-tile>
+              <mat-grid-tile colspan="1" class="team-a">Deaths</mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+        <mat-nav-list *ngIf="currentMatch">
+          <mat-list-item>
+            <mat-grid-list mat-line cols="4" rowHeight="80px" *ngFor="let player of currentMatch.terrorists.players; let i=index;">
+              <mat-grid-tile colspan="1" class="player-name">
+                {{player.name}}
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1" *ngIf="player.is_alive">
+                Yes
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1" *ngIf="!player.is_alive">
+                No
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1">
+                {{player.kills}}
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1">
+                {{player.deaths}}
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+
+      <!-- Table for Counter Terrorists -->
+      <div class="ui-lg-6 ui-md-6 ui-g-6">
+        <mat-nav-list *ngIf="currentMatch">
+          <mat-list-item>
+            <mat-grid-list mat-line cols="4" rowHeight="39px">
+              <mat-grid-tile colspan="4" class="team-b">{{currentMatch.counter_terrorists.name}} (Counter Terrorists)</mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+
+        <mat-nav-list>
+          <mat-list-item>
+            <mat-grid-list mat-line cols="4" rowHeight="39px">
+              <mat-grid-tile colspan="1" class="team-b">Name</mat-grid-tile>
+              <mat-grid-tile colspan="1" class="team-b">Alive?</mat-grid-tile>
+              <mat-grid-tile colspan="1" class="team-b">Kills</mat-grid-tile>
+              <mat-grid-tile colspan="1" class="team-b">Deaths</mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+        <mat-nav-list *ngIf="currentMatch">
+          <mat-list-item>
+            <mat-grid-list mat-line cols="4" rowHeight="80px" *ngFor="let player of currentMatch.counter_terrorists.players; let i=index;">
+              <mat-grid-tile colspan="1" class="player-name">
+                {{player.name}}
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1" *ngIf="player.is_alive">
+                Yes
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1" *ngIf="!player.is_alive">
+                No
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1">
+                {{player.kills}}
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1">
+                {{player.deaths}}
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+
+    </div>
+
+    <!-- Cards of all matches -->
+    <div class="ui-lg-6 ui-md-6 ui-g-6" style="padding: 5%">
+      <div class="ui-lg-6 ui-md-6 ui-g-6" *ngFor="let match of matches; let i=index;">
+        <mat-card class="ui-lg-6 ui-md-6 ui-g-6 score-cards example-card" (click)="fetchMatchDetails(match)" matTooltip="Click to view details">
+          <mat-card-header>
+            {{match.counter_terrorists.name}}
+            <span style="color:goldenrod"> &nbsp;Vs&nbsp;</span>
+            {{match.terrorists.name}}
+          </mat-card-header>
+          <mat-card-content>
+            <div class="ui-lg-12 ui-md-12 ui-g-12 score">
+              {{match.counter_terrorists.score}} / {{match.terrorists.score}}
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</div>
