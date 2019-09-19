@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingMatchesComponent implements OnInit {
 
+  public allUpcomingMatches = [];
   constructor() { }
 
   ngOnInit() {
+    this.allUpcomingMatches = [
+      {terrorists: 'ABC', counter_terrorists: 'XYZ'},
+      {terrorists: 'JGJH', counter_terrorists: 'FT4G'},
+      {terrorists: 'NSAG', counter_terrorists: 'JMWY'},
+      {terrorists: 'HAYR', counter_terrorists: 'GTS'}
+    ]
   }
 
 }

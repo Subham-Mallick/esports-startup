@@ -28,7 +28,6 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "src/styles.scss",
               // "node_modules/primeng/resources/themes/omega/theme.css",
               // "node_modules/font-awesome/css/font-awesome.min.css",
@@ -39,11 +38,6 @@
             "scripts": [
               "node_modules/chart.js/dist/Chart.js"
             ]
-=======
-              "src/styles.scss"
-            ],
-            "scripts": []
->>>>>>> 0d1fa5367adbce45aee45e62043b972f6fb3d26c
           },
           "configurations": {
             "production": {
@@ -101,7 +95,6 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "src/styles.scss",
               // "node_modules/primeng/resources/themes/omega/theme.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
@@ -112,11 +105,6 @@
             "scripts": [
               "node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
             ]
-=======
-              "src/styles.scss"
-            ],
-            "scripts": []
->>>>>>> 0d1fa5367adbce45aee45e62043b972f6fb3d26c
           }
         },
         "lint": {

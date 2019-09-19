@@ -23,8 +23,9 @@ export class MatchScoresService {
   }
 
   public getAllScores(): Observable<any> {
-<<<<<<< HEAD
+    console.log("Fetching scores...")
     let allScores = this.httpClient.get(this.baseUrl + '/scores')
+    console.log(allScores)
     return allScores;
   }// end get all scores
 
@@ -34,12 +35,5 @@ export class MatchScoresService {
     console.log(allMatches)
     return allMatches;
   }// end get all matches
-=======
-    console.log("Fetching scores...")
-    let allScores = this.httpClient.get(this.baseUrl + '/scores')
-    console.log(allScores)
-    return allScores;
-  }// end get all books 
->>>>>>> 0d1fa5367adbce45aee45e62043b972f6fb3d26c
 
 }

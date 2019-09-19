@@ -1,3 +1,41 @@
-<p>
-  upcoming-matches works!
-</p>
+<div class="ui-g">
+  <div class="ui-lg-12 ui-md-12 ui-g-12">
+    <div class="ui-lg-6 ui-md-6 ui-g-6">
+      <div class="header">
+        Upcoming Matches
+      </div>
+      <mat-nav-list>
+        <mat-list-item class="list-header">
+          <mat-grid-list mat-line cols="5" rowHeight="39px">
+            <mat-grid-tile colspan="2">
+              <div>Terrorists</div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="1">
+              <div>Vs</div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+              <div>Counter Terrorists</div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list *ngFor="let match of allUpcomingMatches">
+          <mat-list-item class="list-content">
+            <mat-grid-list mat-line cols="5" rowHeight="39px">
+              <mat-grid-tile colspan="2">
+                <div>{{match.terrorists}}</div>
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1">
+                <div>Vs</div>
+              </mat-grid-tile>
+              <mat-grid-tile colspan="2">
+                <div>{{match.counter_terrorists}}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-list-item>
+        </mat-nav-list>
+    </div>
+    <div class="ui-lg-6 ui-md-6 ui-g-6">
+    </div>
+  </div>
+</div>

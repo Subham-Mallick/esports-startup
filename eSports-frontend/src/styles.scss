@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
@@ -23,6 +23,6 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($candy-app-theme);/* You can add global styles to this file, and also import other style files */
-=======
+
 /* You can add global styles to this file, and also import other style files */
->>>>>>> 0d1fa5367adbce45aee45e62043b972f6fb3d26c
+

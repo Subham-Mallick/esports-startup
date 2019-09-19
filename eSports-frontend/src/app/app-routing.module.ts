@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LiveScoresComponent } from './live-scores/live-scores.component';
-<<<<<<< HEAD
 import { AllMatchesComponent } from './all-matches/all-matches.component';
+import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.component';
 
 const routes: Routes = [
   {path: 'live-scores', component: LiveScoresComponent},
   {path: 'all-matches', component: AllMatchesComponent},
-=======
-
-const routes: Routes = [
-  {path: 'live-scores', component: LiveScoresComponent},
->>>>>>> 0d1fa5367adbce45aee45e62043b972f6fb3d26c
+  {path: 'upcoming-matches', component: UpcomingMatchesComponent},
   {path: '', redirectTo: 'live-scores', pathMatch: 'full'}
 ];
 
